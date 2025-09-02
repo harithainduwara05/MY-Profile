@@ -16,3 +16,4 @@
     navMenu.classList.toggle("active");
     mobileMenu.classList.toggle("open");
   });
+
