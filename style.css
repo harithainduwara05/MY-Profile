@@ -115,38 +115,6 @@ nav {
 .about-section {
   background: #111;
 }
-.about-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  margin-bottom: 40px;
-}
-.about-image img {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  border: 4px solid #00f260;
-}
-.about-text {
-  max-width: 600px;
-  text-align: left;
-}
-.stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-.stat {
-  background: #222;
-  padding: 20px;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-.stat:hover {
-  background: #00f260;
-  color: black;
-}
 
 /* Skills */
 .skills-grid {
@@ -244,44 +212,46 @@ footer {
     text-align: center;
     gap: 20px;
   }
+
   .about-text {
-    flex: unset;
-    width: 100%;
-    max-width: 90%;
+    flex: unset;       /* remove unwanted flex ratio */
+    width: 100%;       /* full width on mobile */
+    max-width: 90%;    /* but not too wide */
   }
+
   .about-image {
-    order: -1;
+    order: -1;         /* image comes first on mobile */
     margin-bottom: 20px;
   }
+
   .about-image img {
     width: 180px;
     height: 180px;
   }
 }
 /* Stats section responsive fix */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
 @media (max-width: 768px) {
   .stats {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
     gap: 15px;
     text-align: center;
   }
+  
   .stat {
     padding: 15px;
   }
 }
+
 @media (max-width: 480px) {
   .stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 1 card per row on very small screens */
   }
 }
-/* Skills section responsive fix */
-@media (max-width: 480px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-  .skill {
-    padding: 10px;
-    text-align: center;
-  }
-}
+
+
